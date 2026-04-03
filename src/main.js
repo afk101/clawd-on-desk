@@ -23,6 +23,7 @@ if (isWin) {
 
 // ── Window size presets ──
 const SIZES = {
+  XS: { width: 120, height: 120 },
   S: { width: 200, height: 200 },
   M: { width: 280, height: 280 },
   L: { width: 360, height: 360 },

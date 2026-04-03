@@ -47,6 +47,7 @@ const WIN_TOPMOST_LEVEL = "pop-up-menu"; // above taskbar-level UI
 
 // ── Window size presets (mirrored from main.js for resizeWindow) ──
 const SIZES = {
+  XS: { width: 120, height: 120 },
   S: { width: 200, height: 200 },
   M: { width: 280, height: 280 },
   L: { width: 360, height: 360 },
@@ -56,6 +57,7 @@ const SIZES = {
 const i18n = {
   en: {
     size: "Size",
+    extraSmall: "Extra Small (XS)",
     small: "Small (S)",
     medium: "Medium (M)",
     large: "Large (L)",
@@ -104,6 +106,7 @@ const i18n = {
   },
   zh: {
     size: "大小",
+    extraSmall: "迷你 (XS)",
     small: "小 (S)",
     medium: "中 (M)",
     large: "大 (L)",
@@ -423,6 +426,7 @@ module.exports = function initMenu(ctx) {
       {
         label: t("size"),
         submenu: [
+          { label: t("extraSmall"), type: "radio", checked: ctx.currentSize === "XS", click: () => resizeWindow("XS") },
           { label: t("small"), type: "radio", checked: ctx.currentSize === "S", click: () => resizeWindow("S") },
           { label: t("medium"), type: "radio", checked: ctx.currentSize === "M", click: () => resizeWindow("M") },
           { label: t("large"), type: "radio", checked: ctx.currentSize === "L", click: () => resizeWindow("L") },
